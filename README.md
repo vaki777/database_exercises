@@ -1,2 +1,2 @@
-# database_exercises
+# Database Exercises
 Database SQL exercises
