@@ -1,7 +1,7 @@
 /* create database movie_industry
 CREATE DATABASE movie_industry;
 
-/* cretae table actor
+/* create table actor
 CREATE TABLE actor(
   id BIGSERIAL NOT NULL PRIMARY KEY,
   first_name VARCHAR(50) NOT NULL,
@@ -11,4 +11,18 @@ CREATE TABLE actor(
   marital_status VARCHAR(12) DEFAULT 'Unknown',
   net_worth_in_milions FLOAT4
   );
+  
+  /* insert data into table actor
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('Brad', 'Pit', DATE '1963-12-18', 'Male', 'single', 240.00);
+  
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('Jennifer', 'Aniston', DATE '1969-11-02', 'Female', 'single', 240.00);
+  
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('Angelina', 'Jolie', DATE '1975-06-04', 'Female', 'single', 100.00);
+  
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('Johnny', 'Depp', DATE '1963-06-09', 'Male', 'single', 200.00);
+  
   
