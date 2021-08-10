@@ -25,4 +25,12 @@ CREATE TABLE actor(
   INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
   VALUES('Johnny', 'Depp', DATE '1963-06-09', 'Male', 'single', 200.00);
   
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('Tom', 'Cruise', DATE '1962-07-03', 'Male', 'divorced', 570.00);
+  
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('Natalie', 'Portman', DATE '1981-06-09', 'Female', 'married', 60.00);
+  
+  INSERT INTO actor(first_name, last_name, date_of_birth, gender, marital_status, net_worth_in_milions)
+  VALUES('John', 'Doe', DATE '2021-01-01', 'Male', 'single', 100.00);
   
