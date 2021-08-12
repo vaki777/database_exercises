@@ -32,3 +32,8 @@ WHERE first_name LIKE '_enn%';
 
 SELECT * FROM actor
 WHERE date_of_birth >= DATE '1963-01-01' AND  date_of_birth <= DATE '1963-12-31';
+
+/* select from multiple tables
+SELECT * FROM actor JOIN digital_asset ON digital_asset.actor_id=actor.id;
+
+SELECT * FROM actor LEFT JOIN digital_asset ON digital_asset.actor_id=actor.id;
