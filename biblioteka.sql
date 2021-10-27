@@ -113,3 +113,46 @@ CONSTRAINT rezervacija_pkey PRIMARY KEY (sifn, sifc)
 /* insert into rezervacija
 INSERT INTO rezervacija(sifn, sifc, datum) VALUES ('RBP0', 'JJ1', DATE('1995-10-18'));
 INSERT INTO rezervacija(sifn, sifc, datum) VALUES ('RBP0', 'MM0', DATE('1995-10-20'));
+
+/*************************************************************************************
+
+/* upit za prikaz tabele oblast
+select * from oblast;
+
+/* upit za prikaz tabele oblast u zeljenom redosledu
+select * from oblast
+order by sifo;
+
+/* upit za prikaz kolone sifn iz tabele knjiga
+select sifn from knjiga;
+
+/* upit za prikaz kolone sifn iz tabele knjiga sa eleminacijom duplikata
+select distinct sifn from knjiga;
+
+/* upit za prikaz kolone sifn iz tabele knjiga sa eleminacijom duplikata u zeljnom redosledu
+select distinct sifn from knjiga
+order by sifn desc;
+
+/* upit za prikaz dve kolone iy tabele naslov sa zadatom oblascu
+select sifn, naziv from naslov 
+where sifo='PJ';
+
+/* upit za prikaz ukupnog broja clanova
+select count(*) from clan;
+
+/* upit za prikaz broja clanova koji su vrsili pozajmice
+select count(distinct sifc) from pozajmica;
+
+/* upit za prikaz broja naslova koje je napisao zadati autor
+select count(*) from je_autor
+WHERE sifa = 'DM0';
+
+/* upit za prikaz sume trajanja svih pozajmica
+select SUM(dana) from pozajmica;
+
+/* upit za prikaz min i max trajanja svih pozajmica
+select MIN(dana) AS minimalno, MAX(dana) AS naksimalno from pozajmica;
+
+/* upit za prikaz sume i proseka trajanja pozajmica za zadatog clana
+select SUM(dana), AVG(dana) from pozajmica 
+WHERE sifc = 'JJ1';
