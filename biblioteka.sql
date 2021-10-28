@@ -156,3 +156,30 @@ select MIN(dana) AS minimalno, MAX(dana) AS naksimalno from pozajmica;
 /* upit za prikaz sume i proseka trajanja pozajmica za zadatog clana
 select SUM(dana), AVG(dana) from pozajmica 
 WHERE sifc = 'JJ1';
+
+/* upit za prikaz sifara autora i broja naslova koji su napisali
+select sifa, count(*) 
+from je_autor
+group by sifa;
+
+/* upit za prikaz sifara clanova i sumu njihovih pozajmica
+select sifc, SUM(dana) 
+from pozajmica
+group by sifc;
+
+/* upit za prikaz sifara clanova cija je suma trajanja pozajmica >10
+select sifc, SUM(dana) 
+from pozajmica
+group by sifc
+having sum(dana) > 10;
+
+/* upit za prikaz sifara clanova, njihovog ukupnog broja pozajmica i ukupnog trajanja pozajmica
+select sifc, count(*), sum(dana)
+from pozajmica
+group by sifc;
+
+/* upit za prikaz sifara clanova, njihovog ukupnog broja pozajmica i ukupnog trajanja pozajmica ali samo za pozajmice duze od 2 dana
+select sifc, count(*), sum(dana)
+from pozajmica
+where dana >2
+group by sifc;
