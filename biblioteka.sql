@@ -183,3 +183,53 @@ select sifc, count(*), sum(dana)
 from pozajmica
 where dana >2
 group by sifc;
+
+/* upit koji daje nazive naslova i nazive njihove oblasti
+select naslov.naziv, oblast.naziv
+from naslov join oblast
+on naslov.sifo=oblast.sifo;
+
+/* upit koji daje nazive naslova i nazive njihove oblasti sortirano po nazivu naslova
+select naslov.naziv, oblast.naziv
+from naslov join oblast
+on naslov.sifo=oblast.sifo
+order by naslov.naziv;
+
+/* upit koji daje sifre i imena clanova koji su pozajmljivali knjige
+select distinct clan.sifc, clan.ime
+from clan join pozajmica
+on clan.sifc=pozajmica.sifc;
+
+/* upit koji daje ukupno trajanje pozajmica svih knjiga sa sifrom naslova PP00
+select sum(pozajmica.dana)
+from knjiga join pozajmica
+on knjiga.sifk=pozajmica.sifk
+where knjiga.sifn='PP00';
+
+/* upit koji daje sifre, imena clanova i broj njihovih pozajmica
+select clan.sifc, clan.ime, count(*)
+from clan join pozajmica
+on clan.sifc=pozajmica.sifc
+group by clan.sifc, clan.ime;
+
+/* upit koji daje sifre clanova i ukupna trajanja pozajmice ali samo one koje su izmedju 5 i 10 dana
+select sifc, sum(dana)
+from pozajmica 
+group by sifc
+having sum(dana) between 5 and 10;
+
+/* upit koji daje nazive svih naslova u kojima se nalazi jec jezik
+select naziv
+from naslov
+where naziv like '%jezik%';
+
+/* upit koji daje sifre knjiga koje odgovaraju naslovima sifara RBP0 i RK00
+select sifk
+from knjiga 
+where sifn in ('RBP0', 'RK00');
+
+/* upit koji daje sifre naslova za sve knjige osim za one cije su sifre 001, 002 i 003
+select distinct sifn
+from knjiga
+where sifk not in ('001', '002', '003');
+
