@@ -258,3 +258,24 @@ insert into prereq values ('CS-315', 'CS-101');
 insert into prereq values ('CS-319', 'CS-101');
 insert into prereq values ('CS-347', 'CS-101');
 insert into prereq values ('EE-181', 'PHY-101');
+
+/*
+/* Queries
+/*
+
+/* Find the titles of courses in the Comp.Sci. department that have 3 credits
+
+select title from course 
+where dept_name = 'Comp. Sci.' and credits = 3;
+
+/* Find the IDs of all students who were taught by an instructor named Einstein; make sure there are no duplicates in the result
+
+select distinct t.id 
+from takes t, teaches tec, instructor i
+where 
+	t.course_id = tec.course_id and 
+	t.sec_id = tec.sec_id and 
+	t.semester = tec.semester and
+	t.year = tec.year and 
+	tec.id = i.id and 
+	i.name = 'Einstein';
