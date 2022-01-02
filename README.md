@@ -6,7 +6,7 @@ Database SQL exercises
   * [Basic filter queries](filter.sql)
   * [Aggregate queries](aggregate.sql)
   * [Modify queries](modify.sql)
-* Biblioteka / Library
+* Biblioteka / Library (V. Blagojevic book)
   * [Complete example](biblioteka.sql)
-* University system
+* University system (Database System Concepts book, www.db-book.com)
   * [Complete example](university.sql)   
