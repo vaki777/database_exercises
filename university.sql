@@ -279,3 +279,45 @@ where
 	t.year = tec.year and 
 	tec.id = i.id and 
 	i.name = 'Einstein';
+
+/* Find the highest salary of any instructor
+
+select max(salary) from instructor i ;
+
+/* Find all instructors earning the highest salary
+
+select id, name from instructor i 
+where salary = (select max(salary) from instructor i);
+
+/* Increase the salary of each instructor in the Comp.Sci. department by 10%
+
+update instructor 
+set salary = salary * 1.1
+where dept_name = 'Comp. Sci.';
+
+/* Delete all courses that have never been offered (that is. do not occur in the section relation)
+
+delete from course 
+where course_id not in (select course_id from section);
+
+/* Find all buildings and room numbers where course with title 'Game Design' was held
+
+select c.building, c.room_number
+from classroom c, section s, course co
+where 
+	c.building = s.building and 
+	c.room_number = s.room_number and 
+	s.course_id = co.course_id and co.title = 'Game Design';
+
+/* Find all courses taken by student Aoi
+
+select c.title
+from course c, section s, takes t, student st
+where 
+	c.course_id = s.course_id and 
+	s.course_id = t.course_id and 
+	s.sec_id = t.sec_id and 
+	s.semester = t.semester and 
+	s.year = t.year and 
+	t.id = st.id and 
+	st.name = 'Aoi';
